@@ -1,0 +1,18 @@
+.nav-styles{
+  background-color: #5d8fff;
+  color: #fff;
+}
+
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.margin-login{
+  margin-top: 20px;
+}
+
+.margin-create-user{
+  margin: 20px !important;
+}

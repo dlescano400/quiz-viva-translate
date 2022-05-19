@@ -1,36 +1,45 @@
 import useInput from '../../hooks/useInput'
-import { loginSuccessful } from '../../features/login/loginSlice'
-import { useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import useCreateUser from '../../hooks/useCreateUser'
 
 const RegisterTemplate = () => {
-  const [email, emailInput] = useInput("email")
-  const [password, passwordInput] = useInput("password")
-  const [password2, passwordInput2] = useInput("password")
-  const dispatch = useDispatch()
-  let navigate = useNavigate()
+  const [email, emailInput, resetInputEmail] = useInput("email")
+  const [password, passwordInput, resetInputPass] = useInput("password")
+  const [password2, passwordInput2, resetInputPass2] = useInput("password")
+  const user = useCreateUser()
 
   const handleSubmit = (event) => {
     event.preventDefault()
     if(!!email && (password === password2)){
-      dispatch(loginSuccessful(email))
-      navigate("/login")
+      user.create(email, password)
+      resetInputEmail()
+      resetInputPass()
+      resetInputPass2()
     } else {
       alert('error register')
     }
   }
 
-  return <div>
+  return <div className="row col center">
+    <div className='col-12 col-2-md card margin-login'>
     Registro
-    <form onSubmit={handleSubmit}>
-      {emailInput}
+      <form onSubmit={handleSubmit}>
+        {emailInput}
+        <br />
+        {passwordInput}
+        <br />
+        {passwordInput2}
+        <br />
+        <button style={{marginRight: '20px'}} type="submit" disabled={user.loading}>{ user.loading ? 'new user...' : 'signup'}</button>
+        <Link to="/login">Login</Link>
+      </form>
       <br />
-      {passwordInput}
-      <br />
-      {passwordInput2}
-      <br />
-      <button type="submit">signup</button>
-    </form>
+      <div>
+        {
+          user.user && 'usuario creado con exito'
+        }
+      </div>
+    </div>
   </div>
 }
 

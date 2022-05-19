@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { logoutUser } from '../../features/login/loginSlice'
+import './styles.css'
 
 const HomeTemplate = () => {
   
@@ -14,8 +15,14 @@ const HomeTemplate = () => {
 
   const dispatch = useDispatch()
   return <div>
-    Home
-    <button onClick={() => dispatch(logoutUser())}>logout</button>
+    <nav class="nav nav-styles">
+      <div class="nav-left">
+        <a class="brand" href="#">Home</a>
+      </div>
+      <div class="nav-right">
+        <button onClick={() => dispatch(logoutUser())}>logout</button>
+      </div>
+    </nav>
   </div>
 
 }
