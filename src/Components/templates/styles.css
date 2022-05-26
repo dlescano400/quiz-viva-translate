@@ -1,6 +1,16 @@
 .nav-styles{
   background-color: #5d8fff;
+}
+
+.home{
   color: #fff;
+  margin: 0;
+  font-size: 1.75em;
+  padding-top: 0;
+  padding-bottom: 0;
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
 }
 
 .center{
@@ -15,4 +25,55 @@
 
 .margin-create-user{
   margin: 20px !important;
+}
+
+.container-quiz {
+  display: flex;
+  flex-flow: row nowrap;
+  height: calc(100vh - 65px);
+}
+
+.container-quiz aside {
+  background: white;
+  background-color: #efefef;
+  flex: 1 1 auto;
+  max-width: 200px;
+  min-width: 120px;
+}
+
+.container-quiz header{
+  padding: 20px 15px;
+  margin-bottom: 30px;
+}
+
+.container-quiz aside ul {
+  list-style: none;
+}
+
+.container-quiz aside ul a {
+  padding: 10px 15px;
+  display: block;
+  color: #5d8fff;
+}
+
+.container-quiz aside ul a.active {
+  box-shadow: inset -5px 0px 0 0 #5d8fff;
+  background: #ffffff;
+}
+
+.container-quiz main {
+  flex: 1 1 auto;
+  padding: 0 30px;
+}
+
+.nav-styles .logount-link{
+  background: none;
+  padding: 0 2.5rem;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.login-register{
+  min-width: 300px;
+  text-align: center;
 }

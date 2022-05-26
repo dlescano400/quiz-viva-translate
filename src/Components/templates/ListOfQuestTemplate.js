@@ -1,7 +1,9 @@
 
 const ListOfQuestTemplate = () => {
   return <div>
-    List Of Quest
+    <header className="page-title">
+      <h1>Mis Preguntas</h1>
+    </header>
   </div>
 }
 

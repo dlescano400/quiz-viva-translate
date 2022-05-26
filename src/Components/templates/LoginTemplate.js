@@ -51,7 +51,7 @@ const LoginTemplate = () => {
 
   return (
     <div className="row col center">
-      <div className='col-12 col-2-md card margin-login'>
+      <div className='col-12 col-2-md card login-register margin-login'>
         Login
         <form onSubmit={handleSubmit}>
           {emailInput}
